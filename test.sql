@@ -14,3 +14,5 @@ WHERE TABLE_SCHEMA = 'ShopDB' and TABLE_NAME = 'Customers' and INDEX_NAME = 'Ema
 SET @IndexCount := ( SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
 WHERE TABLE_SCHEMA = 'ShopDB'); 
 SELECT IF( @IndexCount = 9, 'Only required indexes are in place', 'Error: too many or not enough indexes were created in the database');
+
+SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = 'ShopDB';
